@@ -1,0 +1,55 @@
+<section class="recipes-header">
+  
+  <h2>Recipes</h2>
+  
+  <p>Browse, search and manage your recipe collection.</p>
+</section>
+<div *ngIf="isLoading" class="loader">
+  Loading recipes...
+</div>
+
+<div class="recipes-toolbar">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="filterRecipes()"
+    placeholder="Search by recipe name or category"
+  />
+
+  <span>{{ filteredRecipes.length }} recipes found</span>
+</div>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+<div class="recipes-grid" *ngIf="filteredRecipes.length > 0">
+<div class="recipe-card" *ngFor="let recipe of filteredRecipes">
+
+  <!-- IMAGE WRAPPER -->
+  <div class="image-container">
+
+    <img
+      [src]="recipe.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836'"
+      class="recipe-img">
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- TITLE ON IMAGE -->
+    <h3 class="image-title">
+      {{ recipe.name }}
+    </h3>
+
+  </div>
+
+  <!-- DETAILS -->
+  <div class="card-body">
+
+    <p><strong>Category:</strong> {{ recipe.category }}</p>
+    <p><strong>Prep Time:</strong> {{ recipe.prep_time }} mins</p>
+
+    <a class="view-btn" [routerLink]="['/recipes', recipe._id]">
+      View Recipe
+    </a>
+
+  </div>
+
+</div>

@@ -1,0 +1,85 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.styled-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.styled-form h2 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.form-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.styled-form button {
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.styled-form button:hover {
+  background-color: #111827;
+}
+ol {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ol li {
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .nutrition-grid {
+    grid-template-columns: 1fr;
+  }
+}

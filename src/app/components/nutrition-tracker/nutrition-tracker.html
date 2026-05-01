@@ -1,0 +1,68 @@
+<section class="tracker-page">
+  <div class="tracker-form">
+    <h2>Nutrition Tracker</h2>
+    <p>Estimate your daily calorie and macronutrient intake targets.</p>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" [(ngModel)]="age" name="age">
+    </div>
+
+    <div class="form-group">
+      <label>Weight (kg)</label>
+      <input type="number" [(ngModel)]="weight" name="weight">
+    </div>
+
+    <div class="form-group">
+      <label>Height (cm)</label>
+      <input type="number" [(ngModel)]="height" name="height">
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select [(ngModel)]="gender" name="gender">
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Activity Level</label>
+      <select [(ngModel)]="activity" name="activity">
+        <option [ngValue]="1.2">Low activity</option>
+        <option [ngValue]="1.55">Moderate activity</option>
+        <option [ngValue]="1.9">High activity</option>
+      </select>
+    </div>
+
+    <button (click)="calculate()">Calculate Targets</button>
+  </div>
+
+  <div class="tracker-results" *ngIf="calculated">
+    <h2>Daily Targets</h2>
+
+    <div class="chart"></div>
+
+    <div class="result-grid">
+      <div>
+        <strong>{{ calories }}</strong>
+        <span>Calories</span>
+      </div>
+
+      <div>
+        <strong>{{ protein }}g</strong>
+        <span>Protein</span>
+      </div>
+
+      <div>
+        <strong>{{ carbs }}g</strong>
+        <span>Carbs</span>
+      </div>
+
+      <div>
+        <strong>{{ fats }}g</strong>
+        <span>Fats</span>
+      </div>
+    </div>
+  </div>
+</section>

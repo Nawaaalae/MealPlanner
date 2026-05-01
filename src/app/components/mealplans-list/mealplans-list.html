@@ -1,0 +1,37 @@
+<section class="mealplans-header">
+  <h2>Mealplans</h2>
+  <p>View and manage weekly meal plans created through the application.</p>
+</section>
+
+<div class="mealplans-toolbar">
+  <span>{{ mealplans.length }} mealplans found</span>
+</div>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+
+<div class="mealplans-grid" *ngIf="mealplans.length > 0">
+  <div class="mealplan-card" *ngFor="let mealplan of mealplans">
+    <h3>{{ mealplan.user }}</h3>
+    <p><strong>Week Start:</strong> {{ mealplan.week_start }}</p>
+
+    <div class="meals-box" *ngIf="mealplan.meals && mealplan.meals.length > 0">
+      <h4>Meals</h4>
+
+      <ul>
+        <li *ngFor="let meal of mealplan.meals">
+          <span class="day">{{ meal.day }}</span>
+          <span>{{ meal.meal_type }}</span>
+          <span>{{ meal.recipe }}</span>
+        </li>
+      </ul>
+      <button
+  class="delete-btn"
+  *ngIf="isAdmin()"
+  (click)="onDelete(mealplan._id)">
+  Delete Mealplan
+</button>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="mealplans.length === 0">No mealplans available.</p>

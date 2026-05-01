@@ -1,0 +1,44 @@
+<div class="detail-card" *ngIf="recipe">
+
+  <h2>{{ recipe.name }}</h2>
+  
+ <img
+  [src]="recipe.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836'"
+  alt="Recipe image"
+  class="detail-img">
+
+  <p><strong>Category:</strong> {{ recipe.category }}</p>
+  <p><strong>Preparation Time:</strong> {{ recipe.prep_time }} mins</p>
+
+  <!-- Nutrition -->
+  <div class="nutrition-box">
+    <p><strong>Calories:</strong> {{ recipe.calories || 0 }}</p>
+    <p><strong>Protein:</strong> {{ recipe.protein || 0 }}g</p>
+    <p><strong>Carbs:</strong> {{ recipe.carbs || 0 }}g</p>
+    <p><strong>Servings:</strong> {{ recipe.servings || 1 }}</p>
+  </div>
+
+  <!-- Instructions -->
+  <div *ngIf="recipe.steps?.length > 0" class="instructions">
+    <h3>Instructions</h3>
+
+    <ol>
+      <li *ngFor="let step of recipe.steps">
+        {{ step }}
+      </li>
+    </ol>
+  </div>
+
+  <div class="actions" *ngIf="isAdmin()">
+  <a class="edit-btn" [routerLink]="['/edit-recipe', recipe._id]">
+    Edit Recipe
+  </a>
+
+  <button class="delete-btn" (click)="deleteRecipe()">
+    Delete Recipe
+  </button>
+</div>
+
+<p class="admin-message" *ngIf="!isAdmin()">
+  Only admin users can edit or delete recipes.
+</p>

@@ -1,0 +1,120 @@
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-overlay">
+    <h1>Plan Your Meals Smarter 🍽️</h1>
+    <p>Organise recipes, track nutrition, and simplify your weekly meals.</p>
+  </div>
+</div>
+
+<!-- MAIN CARDS -->
+<section class="preview-section">
+  <div class="home-grid">
+
+    <div class="card">
+      <div class="card-icon">🍽️</div>
+      <h3>Recipes</h3>
+      <p>Browse your recipe collection and manage saved recipes.</p>
+      <a routerLink="/recipes" class="card-button">View Recipes</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h3>Mealplans</h3>
+      <p>View your weekly meal plans and planned meals.</p>
+      <a routerLink="/mealplans" class="card-button">View Mealplans</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">➕</div>
+      <h3>Add Recipe</h3>
+      <p>Create a new recipe with category and preparation details.</p>
+      <a routerLink="/add-recipe" class="card-button">Add Recipe</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📝</div>
+      <h3>Add Mealplan</h3>
+      <p>Create a weekly meal plan with multiple meals.</p>
+      <a routerLink="/add-mealplan" class="card-button">Add Mealplan</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUGGESTIONS + TRACKER -->
+<section class="suggestions-section">
+
+  <h2>High Protein Suggestions</h2>
+  <p>Recipe ideas selected from your collection to support a balanced meal plan.</p>
+
+  <div class="suggestions-layout">
+
+    <!-- LEFT: SUGGESTED RECIPES -->
+    <div class="suggestions-grid" *ngIf="suggestedRecipes.length > 0">
+
+      <div class="suggestion-card" *ngFor="let recipe of suggestedRecipes">
+
+        <img
+          [src]="recipe.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836'"
+          alt="Recipe image">
+
+        <div class="suggestion-body">
+          <h3>{{ recipe.name }}</h3>
+          <p>{{ recipe.category }}</p>
+
+          <a [routerLink]="['/recipes', recipe._id]">
+            View Recipe
+          </a>
+
+          <div class="badge">High protein</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT: DYNAMIC TRACKER -->
+    <aside class="tracker-panel">
+
+      <!-- DYNAMIC CHART -->
+      <div
+        class="mini-chart"
+        [style.background]="
+          'conic-gradient(#16a34a 0% ' + proteinPercent + '%, ' +
+          '#2563eb ' + proteinPercent + '% ' + (proteinPercent + carbsPercent) + '%, ' +
+          '#f97316 ' + (proteinPercent + carbsPercent) + '% 100%)'
+        ">
+      </div>
+
+      <h3>Nutrition Tracker</h3>
+      <p>Estimate your daily calorie, protein and carbohydrate targets.</p>
+
+      <!-- DYNAMIC STATS -->
+      <div class="tracker-stats">
+
+        <div>
+          <strong>Protein</strong>
+          <span>{{ proteinPercent }}%</span>
+        </div>
+
+        <div>
+          <strong>Carbs</strong>
+          <span>{{ carbsPercent }}%</span>
+        </div>
+
+        <div>
+          <strong>Fats</strong>
+          <span>{{ fatsPercent }}%</span>
+        </div>
+
+      </div>
+
+      <a routerLink="/nutrition-tracker" class="tracker-btn">
+        Open Tracker
+      </a>
+
+    </aside>
+
+  </div>
+
+</section>

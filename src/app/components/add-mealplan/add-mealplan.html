@@ -1,0 +1,39 @@
+<div class="form-wrapper">
+  <form class="styled-form" (ngSubmit)="onSubmit()">
+    <h2>Add Mealplan</h2>
+    <p class="form-subtitle">Create a weekly meal plan with multiple meals.</p>
+
+    <div class="form-group">
+      <label>User</label>
+      <input type="text" [(ngModel)]="user" name="user" placeholder="Enter username">
+    </div>
+
+    <div class="form-group">
+      <label>Week Start</label>
+      <input type="text" [(ngModel)]="week_start" name="week_start" placeholder="Example: 2026-04-24">
+    </div>
+
+    <div class="meal-box" *ngFor="let meal of meals; let i = index">
+      <h3>Meal {{ i + 1 }}</h3>
+
+      <div class="form-group">
+        <label>Day</label>
+        <input type="text" [(ngModel)]="meal.day" name="day{{ i }}" placeholder="Example: Monday">
+      </div>
+
+      <div class="form-group">
+        <label>Meal Type</label>
+        <input type="text" [(ngModel)]="meal.meal_type" name="meal_type{{ i }}" placeholder="Example: Dinner">
+      </div>
+
+      <div class="form-group">
+        <label>Recipe</label>
+        <input type="text" [(ngModel)]="meal.recipe" name="recipe{{ i }}" placeholder="Example: Chicken Pasta">
+      </div>
+    </div>
+
+    <button type="submit">Create Mealplan</button>
+
+    <p class="message">{{ message }}</p>
+  </form>
+</div>

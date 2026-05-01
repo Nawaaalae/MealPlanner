@@ -1,0 +1,168 @@
+.login-container {
+  min-height: 75vh;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.login-info {
+  background: linear-gradient(135deg, #111827, #374151);
+  color: white;
+  padding: 50px;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.login-info h1 {
+  font-size: 48px;
+  margin: 0 0 18px;
+}
+
+.login-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  max-width: 520px;
+}
+
+.feature-list {
+  margin-top: 30px;
+  display: grid;
+  gap: 16px;
+  font-size: 17px;
+}
+
+.feature-list div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.auth-card {
+  background: white;
+  padding: 34px;
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin: 10px 0 26px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.12);
+}
+
+.primary-btn,
+.auth0-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.primary-btn {
+  background: #111827;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #000;
+}
+
+.auth0-btn {
+  background: #f97316;
+  color: white;
+}
+
+.auth0-btn:hover {
+  background: #ea580c;
+}
+
+.message {
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.switch-text {
+  text-align: center;
+  color: #6b7280;
+}
+
+.switch-text span {
+  cursor: pointer;
+  color: #111827;
+  font-weight: 800;
+}
+
+.switch-text span:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 26px 0;
+  color: #9ca3af;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+@media (max-width: 850px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-info {
+    text-align: center;
+  }
+}

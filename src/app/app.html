@@ -1,0 +1,48 @@
+<nav class="topbar">
+  <div class="logo">
+    <ng-container *ngIf="auth0.isAuthenticated$ | async; else customUser">
+      <ng-container *ngIf="auth0.user$ | async as user">
+        Hello, {{ user.name || user.email }}
+      </ng-container>
+    </ng-container>
+
+    <ng-template #customUser>
+      <span *ngIf="isCustomLoggedIn(); else defaultTitle">
+        Hello, {{ username }}
+      </span>
+
+      <ng-template #defaultTitle>
+        Meal Planner
+      </ng-template>
+    </ng-template>
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/login" *ngIf="!(auth0.isAuthenticated$ | async) && !isCustomLoggedIn()">Login</a>
+  </div>
+
+  <div class="nav-actions">
+    <button
+      class="logout-btn"
+      *ngIf="auth0.isAuthenticated$ | async"
+      (click)="auth0.logout({ logoutParams: { returnTo: window.location.origin } })">
+      Logout
+    </button>
+
+    <button
+      class="logout-btn"
+      *ngIf="!(auth0.isAuthenticated$ | async) && isCustomLoggedIn()"
+      (click)="logoutCustom()">
+      Logout
+    </button>
+  </div>
+</nav>
+
+<div class="page-container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+  Manage your meal plans easily @2026.
+</footer>

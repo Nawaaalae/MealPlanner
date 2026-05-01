@@ -1,0 +1,337 @@
+.hero {
+  background-image:
+    linear-gradient(rgba(17, 24, 39, 0.62), rgba(17, 24, 39, 0.62)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 40px;
+  border-radius: 18px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.hero h1 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  color: #e5e7eb;
+  font-size: 18px;
+  max-width: 650px;
+  margin: 0 auto 28px;
+}
+.main-btn,
+.secondary-btn,
+.card-button {
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.main-btn {
+  background-color: #1f2937;
+  color: white;
+}
+
+.main-btn:hover {
+  background-color: #111827;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.secondary-btn:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.preview-section {
+  margin-top: 30px;
+  padding: 30px 20px;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+  #eef2f7,
+  #e0e7ff
+  );
+
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.card p {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #1f2937;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-button:hover {
+  background: #111827;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.suggestions-section {
+  margin-top: 45px;
+  background: linear-gradient(135deg, #111827, #374151);
+  padding: 32px;
+  border-radius: 20px;
+  color: white;
+}
+
+.suggestions-section h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.suggestions-section > p {
+  color: #d1d5db;
+  margin-bottom: 24px;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.suggestion-card {
+  background: white;
+  color: #1f2937;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+  transition: 0.25s ease;
+}
+
+.suggestion-card:first-child {
+  transform: scale(1.03);
+}
+
+.suggestion-card:hover {
+  transform: translateY(-6px);
+}
+
+.suggestion-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.suggestion-card:first-child img {
+  height: 220px;
+}
+
+.suggestion-body {
+  padding: 16px;
+}
+
+.suggestion-body h3 {
+  margin: 0 0 6px;
+  color: #111827;
+}
+
+.suggestion-body p {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.suggestion-body::after {
+  content: "High protein option";
+  display: inline-block;
+  margin-bottom: 12px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.suggestion-body a {
+  display: block;
+  background: #1f2937;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.suggestions-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 850px) {
+  .suggestions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .suggestion-card:first-child {
+    transform: none;
+  }
+}
+.tracker-panel {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mini-chart {
+  position: relative;
+}
+
+.mini-chart::before {
+  content: "Macros";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #111827;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.mini-chart::after {
+  content: "";
+  position: absolute;
+  inset: 32px;
+  background: white;
+  border-radius: 50%;
+}
+
+.tracker-panel h3 {
+  margin: 6px 0 8px;
+  font-size: 26px;
+  color: #111827;
+}
+
+.tracker-panel p {
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.tracker-stats {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.tracker-stats div {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  border-radius: 12px;
+}
+.tracker-stats div::after {
+  content: "";
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #16a34a, #2563eb);
+}
+
+.tracker-stats strong {
+  color: #111827;
+}
+
+.tracker-stats span {
+  font-weight: 900;
+  color: #059669;
+}
+
+.tracker-btn {
+  width: 100%;
+  background: #111827;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.tracker-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+.mini-chart {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-chart:hover {
+  transform: scale(1.08) rotate(6deg);
+}

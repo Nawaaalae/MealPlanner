@@ -1,0 +1,74 @@
+<div class="form-wrapper">
+  <form class="styled-form" (ngSubmit)="onSubmit()">
+    <h2>Add Recipe</h2>
+    <p class="form-subtitle">Create a new recipe entry for your collection.</p>
+
+    <div class="form-group">
+      <label>Recipe Name</label>
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Enter recipe name">
+    </div>
+
+
+<div class="form-group">
+  <label>Image URL</label>
+  <input
+    type="text"
+    [(ngModel)]="image"
+    name="image"
+    placeholder="Paste recipe image URL">
+</div>
+
+
+
+    <div class="form-group">
+      <label>Category</label>
+      <input type="text" [(ngModel)]="category" name="category" placeholder="Enter category">
+    </div>
+
+    <div class="form-group">
+      <label>Preparation Time</label>
+      <input type="number" [(ngModel)]="prep_time" name="prep_time" placeholder="Enter preparation time">
+    </div>
+
+
+
+
+
+    <div class="form-group">
+<div class="nutrition-grid">
+  <div class="form-group">
+    <label>Calories</label>
+    <input type="number" [(ngModel)]="calories" name="calories">
+  </div>
+
+  <div class="form-group">
+    <label>Protein (g)</label>
+    <input type="number" [(ngModel)]="protein" name="protein">
+  </div>
+
+  <div class="form-group">
+    <label>Carbs (g)</label>
+    <input type="number" [(ngModel)]="carbs" name="carbs">
+  </div>
+
+  <div class="form-group">
+    <label>Servings</label>
+    <input type="number" [(ngModel)]="servings" name="servings">
+  </div>
+</div>
+
+
+  <label>Instructions</label>
+  <textarea
+    [(ngModel)]="steps"
+    name="steps"
+    rows="5"
+    placeholder="Write each instruction on a new line">
+  </textarea>
+</div>
+
+    <button type="submit">Add Recipe</button>
+
+    <p class="message">{{ message }}</p>
+  </form>
+</div>

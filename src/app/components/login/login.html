@@ -1,0 +1,70 @@
+<div class="login-container">
+
+  <div class="login-info">
+    <h1>Meal Planner</h1>
+    <p>
+      Plan meals smarter, manage recipes easily, and stay organised every week.
+    </p>
+
+    <div class="feature-list">
+      <div>🥗 Save and manage recipes</div>
+      <div>📅 Create weekly meal plans</div>
+      <div>🔐 Secure login options</div>
+    </div>
+  </div>
+
+  <div class="auth-card">
+
+    <h2 *ngIf="!isSignup">Welcome Back</h2>
+    <h2 *ngIf="isSignup">Create Account</h2>
+
+    <p class="subtitle" *ngIf="!isSignup">
+      Login to continue planning your meals.
+    </p>
+
+    <p class="subtitle" *ngIf="isSignup">
+      Create an account to start using Meal Planner.
+    </p>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Enter username">
+      </div>
+
+      <div class="form-group" *ngIf="isSignup">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Enter password">
+      </div>
+
+      <button type="submit" class="primary-btn">
+        {{ isSignup ? 'Sign Up' : 'Login' }}
+      </button>
+
+      <p class="message">{{ message }}</p>
+
+      <p class="switch-text">
+        <span (click)="switchMode()">
+          {{ isSignup ? 'Already have an account? Login' : 'Need an account? Sign Up' }}
+        </span>
+      </p>
+
+    </form>
+
+    <div class="divider">
+      <span>or</span>
+    </div>
+
+    <button type="button" class="auth0-btn" (click)="loginAuth0()">
+      Continue with Auth0
+    </button>
+
+  </div>
+
+</div>

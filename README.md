@@ -22,17 +22,19 @@ A full-stack web application developed using Angular, Flask, and MongoDB to help
 ![Homepage](images/home.png)
 
 ### 🍲 Recipes
-![Recipes](images/recipes.png)
+![Recipes](images/recepies.png)
 
 ### 📅 Meal Plans
 ![Meal Plans](images/mealplans.png)
 
 ### 📊 Nutrition Tracker
-![Nutrition](images/nutrition.png)
+![Nutrition](images/nutritiontracker.png)
 
 ### 🔐 Admin Panel
-![Admin](images/admin.png)
+![Admin](images/Adminaccess.png)
 
+### 🔐 Login Page
+![Login](images/Login.png)
 ---
 
 ## 🏗️ System Architecture
